@@ -233,7 +233,7 @@ def argparser():
     ap.add_argument('--gbuf', type=int, required=True,
                     help='global buffer size in bytes')
 
-    ap.add_argument('--bus-width', type=int, default=0,
+    ap.add_argument('--bus-width', type=int, default=8,
                     help='array bus width in bits. set 0 to ignore')
     ap.add_argument('--dram-bw', type=float, default='inf',
                     help='total DRAM bandwidth in bytes per cycle.')
@@ -320,8 +320,12 @@ def main():
     ''' Main function. '''
     args = argparser().parse_args()
     res = do_scheduling(args)
-    json.dump(res, sys.stdout, indent=2, default=lambda _: None)
-    sys.stdout.write('\n')
+    # json.dump(res, sys.stdout, indent=2, default=lambda _: None)
+    # sys.stdout.write('\n')
+
+    with open('result.json', 'w') as file:
+        json.dump(res, file, indent=2, default=lambda _: None)
+    
     return 0 if res else 2
 
 

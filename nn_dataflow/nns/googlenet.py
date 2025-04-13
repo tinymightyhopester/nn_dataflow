@@ -19,6 +19,7 @@ from nn_dataflow.core import InputLayer, ConvLayer, FCLayer, PoolingLayer
 
 '''
 GoogLeNet
+(renamed InceptionV1)
 
 ILSVRC 2014
 '''
