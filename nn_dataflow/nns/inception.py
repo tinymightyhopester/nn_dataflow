@@ -29,9 +29,9 @@ NN.set_input_layer(InputLayer(3, 224))
 
 '''this section represents the stem block'''
 
-NN.add('conv1a', ConvLayer(3, 64, 112, 3, 2))
+NN.add('conv1a', ConvLayer(3, 64, 224, 3, 2))
 NN.add('conv1b', ConvLayer(3, 64, 112, 3))
-NN.add('conv1c', ConvLayer(3, 64, 112, 3))
+NN.add('conv1c', ConvLayer(3, 64, 64, 3))
 NN.add('pool1', PoolingLayer(64, 56, 3, strd=2))
 
 NN.add('conv2_3x3a', ConvLayer(64, 64, 56, 3))
